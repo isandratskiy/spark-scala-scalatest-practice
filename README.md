@@ -1,0 +1,1 @@
+# scala-gradle-scalatest-seed
