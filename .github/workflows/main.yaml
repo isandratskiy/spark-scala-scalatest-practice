@@ -14,5 +14,5 @@ jobs:
           distribution: adopt
           java-version: 11
 
-      - name: Build
-        run: sbt clean t
+      - name: Test
+        run: sbt t
