@@ -16,7 +16,8 @@ sealed trait Join {
 }
 
 class SparkJoin(sparkSession: SparkSession) {
-  private lazy val context: SparkContext = sparkSession.sparkContext
+  private lazy val context: SparkContext =
+    sparkSession.sparkContext
 
   private lazy val kidsRDD = context.parallelize(List(
     Row(40, "Mary", 1),
@@ -54,7 +55,8 @@ class SparkJoin(sparkSession: SparkSession) {
 }
 
 object SparkJoins {
-  def apply(sparkSession: SparkSession): SparkJoin = new SparkJoin(sparkSession)
+  def apply(sparkSession: SparkSession): SparkJoin =
+    new SparkJoin(sparkSession)
 }
 
 case object RightOuter extends Join

@@ -9,5 +9,6 @@ class SparkJsonRead(sparkSession: SparkSession) {
 }
 
 object SparkJsonRead {
-  def apply(sparkSession: SparkSession): SparkJsonRead = new SparkJsonRead(sparkSession)
+  def apply(sparkSession: SparkSession): SparkJsonRead =
+    new SparkJsonRead(sparkSession)
 }

@@ -1,21 +1,26 @@
 package io.sandratskyi.spark
 
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.SparkSession._
 import org.apache.spark.sql.functions.col
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class SparkJoinsTest extends AnyFunSuite with Matchers {
-  private val sparkJoin = SparkJoins {
-    val spark: SparkSession = SparkSession
-      .builder()
-      .appName("spark__joins__test__")
-      .master("local[*]")
-      .getOrCreate()
+class SparkJoinsTest
+  extends AnyFunSuite
+  with Matchers {
 
-    spark.sparkContext.setLogLevel("ERROR")
-    spark
-  }
+  val sparkJoin: SparkJoin =
+    SparkJoins {
+      val spark: SparkSession =
+        builder()
+          .appName("spark__joins__test__")
+          .master("local[*]")
+          .getOrCreate()
+
+      spark.sparkContext.setLogLevel("ERROR")
+      spark
+    }
 
   test("should join left outer") {
     val teams = sparkJoin.createTeamsDataFrame

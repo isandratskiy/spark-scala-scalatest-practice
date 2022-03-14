@@ -12,5 +12,6 @@ class SparkCsvRead(sparkSession: SparkSession) {
 }
 
 object SparkCsvRead {
-  def apply(sparkSession: SparkSession): SparkCsvRead = new SparkCsvRead(sparkSession)
+  def apply(sparkSession: SparkSession): SparkCsvRead =
+    new SparkCsvRead(sparkSession)
 }
